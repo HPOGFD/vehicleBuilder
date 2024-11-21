@@ -6,15 +6,15 @@ import AbleToTow from '../interfaces/AbleToTow.js';
 
 // The Truck class extends Vehicle and implements AbleToTow
 class Truck extends Vehicle implements AbleToTow {
-  vin: string;
-  color: string;
-  make: string;
-  model: string;
-  year: number;
-  weight: number;
-  topSpeed: number;
-  wheels: Wheel[];
-  towingCapacity: number;
+  vin!: string;
+  color!: string;
+  make!: string;
+  model!: string;
+  year!: number;
+  weight!: number;
+  topSpeed!: number;
+  wheels!: Wheel[];
+  towingCapacity!: number;
 
   // Constructor accepts Truck properties and ensures default wheels if not provided
   constructor(
@@ -29,7 +29,15 @@ class Truck extends Vehicle implements AbleToTow {
     towingCapacity: number
   ) {
     // Call parent class constructor
-    super(vin, color, make, model, year, weight, topSpeed, wheels);
+    super();
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.wheels = wheels.length === 4 ? wheels : [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
 
     // Ensure the wheels array has exactly 4 elements
     this.wheels = wheels.length === 4 ? wheels : [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
@@ -51,7 +59,7 @@ class Truck extends Vehicle implements AbleToTow {
   }
 
   // Override the printDetails method from the Vehicle class
-  printDetails(): void {
+  override printDetails(): void {
     super.printDetails(); // Call parent class details method
     console.log(`VIN: ${this.vin}`);
     console.log(`Make: ${this.make}`);
