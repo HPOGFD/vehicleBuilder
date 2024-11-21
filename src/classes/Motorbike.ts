@@ -1,4 +1,5 @@
 // Importing Vehicle and Wheel classes
+import { cp } from 'fs';
 import Vehicle from './Vehicle.js';
 import Wheel from './Wheel.js';
 
@@ -39,14 +40,18 @@ class Motorbike extends Vehicle{
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
-   
-  }
-  
-   
     // TODO: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
 
   // TODO: Implement the wheelie method
-    // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
+      // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
+
+    this.wheels = wheels.length === 2 ? wheels : [new Wheel(), new Wheel()];
+      console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`);
+  }
+  
+   
+
+
 
   // TODO: Override the printDetails method from the Vehicle class
   // TODO: The method should call the printDetails method of the parent class
