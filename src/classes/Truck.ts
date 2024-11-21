@@ -82,10 +82,25 @@ class Truck extends Vehicle implements AbleToTow {
 
   }
 
-  // TODO: Override the printDetails method from the Vehicle class
-    // TODO: The method should call the printDetails method of the parent class
-    // TODO: The method should log the details of the Truck
+ // TODO: Override the printDetails method from the Vehicle class
+ printDetails(): void {
+  // TODO: The method should call the printDetails method of the parent class
+  super.printDetails();
+
+  // TODO: The method should log the details of the Truck
+ 
+  
+}
     // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
+console.log(`VIN: ${this.vin}`);
+console.log(`Make: ${this.make}`);
+console.log(`Model: ${this.model}`);
+console.log(`Year: ${this.year}`);
+console.log(`weight: ${this.weight}`);
+console.log(`Top Speed: ${this.topSpeed} mph`);
+console.log(`Color: ${this.color}`);
+console.log(`Towing Capacity: ${this.towingCapacity} lbs`);
+console.log('Wheels:');
 }
 
 // Export the Truck class as the default export
