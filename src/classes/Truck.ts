@@ -59,7 +59,7 @@ class Truck extends Vehicle implements AbleToTow {
   }
 
   // Override the printDetails method from the Vehicle class
-  printDetails(): void {
+  override printDetails(): void {
     super.printDetails(); // Call parent class details method
     console.log(`VIN: ${this.vin}`);
     console.log(`Make: ${this.make}`);
