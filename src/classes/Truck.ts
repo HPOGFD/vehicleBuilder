@@ -29,7 +29,15 @@ class Truck extends Vehicle implements AbleToTow {
     towingCapacity: number
   ) {
     // Call parent class constructor
-    super(vin, color, make, model, year, weight, topSpeed, wheels);
+    super();
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.wheels = wheels.length === 4 ? wheels : [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
 
     // Ensure the wheels array has exactly 4 elements
     this.wheels = wheels.length === 4 ? wheels : [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
