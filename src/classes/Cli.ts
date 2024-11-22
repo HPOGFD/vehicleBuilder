@@ -271,6 +271,7 @@ class Cli {
         // TODO: set the selectedVehicleVin to the vin of the motorbike
         this.selectedVehicleVin = motorbike.vin
         // TODO: perform actions on the motorbike
+        this.performActions();
       });
   }
 
