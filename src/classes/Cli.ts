@@ -411,18 +411,23 @@ class Cli {
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
 
         } else if (answers.action === 'Wheelie') {
-          for (let i = 0; i < this.vehicles.length; i++){
-            if (this.vehicles[i].vin === this.selectedVehicleVin){
-              if (this.vehicles[i] instanceof Motorbike){
-               try {
-                 this.vehicles[i].wheelie();
-               } catch (error) {
-                 console.error('Failed to perform wheelie:', error);
-               }
+          for (let i = 0; i < this.vehicles.length; i++) {
+            if (this.vehicles[i].vin === this.selectedVehicleVin) {
+              const vehicle = this.vehicles[i];
+              // Type guard to check if the vehicle is a Motorbike
+              if (vehicle instanceof Motorbike) {
+                try {
+                  vehicle.wheelie(); // Call the method only if it's a Motorbike
+                } catch (error) {
+                  console.error('Failed to perform wheelie:', error);
+                }
+              } else {
+                console.log('Selected vehicle is not a motorbike and cannot perform a wheelie.');
               }
             }
           }
         }
+        
         else if (answers.action === 'Select or create another vehicle') {
 
 
