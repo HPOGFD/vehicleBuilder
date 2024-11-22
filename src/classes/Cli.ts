@@ -269,6 +269,7 @@ class Cli {
         // TODO: push the motorbike to the vehicles array
         this.vehicles.push(motorbike)
         // TODO: set the selectedVehicleVin to the vin of the motorbike
+        this.selectedVehicleVin = motorbike.vin
         // TODO: perform actions on the motorbike
       });
   }
