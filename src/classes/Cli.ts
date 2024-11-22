@@ -297,7 +297,14 @@ class Cli {
         if (answers.vehicleToTow instanceof Truck) {
         // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
 
-          
+          console.log('A truck cannot tow itself');
+          this.performActions();
+          return;
+        // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+
+        } else {
+          console.log('Towing vehicle');
+          this.performActions();
         }
       });
   }
