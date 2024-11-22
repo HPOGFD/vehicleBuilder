@@ -327,6 +327,8 @@ class Cli {
             'Turn right',
             'Turn left',
             'Reverse',
+            'Tow',
+            'Wheelie',
             'Select or create another vehicle',
             'Exit',
           ],
@@ -391,9 +393,44 @@ class Cli {
             }
           }
         }
-        // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
+        // TODO: add statements to perform the tow action only if the selected vehicle is a truck. 
+        //Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. 
+        //After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
+        else if (answers.action === 'Tow') {
+          for (let i = 0; i < this.vehicles.length; i++){
+            if (this.vehicles[i].vin === this.selectedVehicleVin){
+              if (this.vehicles[i] instanceof Truck){
+                this.findVehicleToTow();
+                return;
+              }
+              
+
+            }
+          
+        }
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
+
+        } else if (answers.action === 'Wheelie') {
+          for (let i = 0; i < this.vehicles.length; i++) {
+            if (this.vehicles[i].vin === this.selectedVehicleVin) {
+              const vehicle = this.vehicles[i];
+              // Type guard to check if the vehicle is a Motorbike
+              if (vehicle instanceof Motorbike) {
+                try {
+                  vehicle.wheelie(); // Call the method only if it's a Motorbike
+                } catch (error) {
+                  console.error('Failed to perform wheelie:', error);
+                }
+              } else {
+                console.log('Selected vehicle is not a motorbike and cannot perform a wheelie.');
+              }
+            }
+          }
+        }
+        
         else if (answers.action === 'Select or create another vehicle') {
+
+
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
           this.startCli();
           return;
