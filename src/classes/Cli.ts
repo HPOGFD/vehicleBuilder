@@ -68,6 +68,7 @@ class Cli {
         if (answers.vehicleType === 'Car') {
           // create a car
           this.createCar();
+          // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type
         } else if (answers.vehicleType === 'Truck') {
           // create a truck
           this.createTruck();
@@ -75,7 +76,7 @@ class Cli {
           // create a motorbike
           this.createMotorbike();
         }
-        // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type
+        
       });
   }
 
@@ -175,10 +176,24 @@ class Cli {
           message: 'Enter Towing Capacity',
         },
       ])
-      .then((answers) => {
+
         // TODO: Use the answers object to pass the required properties to the Truck constructor
+      .then((answers) => {
+        const truck = new Truck(
+          Cli.generateVin(),
+          answers.color,
+          answers.make,
+          answers.model,
+          parseInt(answers.year),
+          parseInt(answers.weight),
+          parseInt(answers.topSpeed),
+          [],
+          parseInt(answers.towingCapacity)
+        )
         // TODO: push the truck to the vehicles array
+
         // TODO: set the selectedVehicleVin to the vin of the truck
+
         // TODO: perform actions on the truck
       });
   }
