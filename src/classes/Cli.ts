@@ -193,7 +193,7 @@ class Cli {
         // TODO: push the truck to the vehicles array
         this.vehicles.push(truck)
         // TODO: set the selectedVehicleVin to the vin of the truck
-
+        this.selectedVehicleVin = truck.vin
         // TODO: perform actions on the truck
       });
   }
