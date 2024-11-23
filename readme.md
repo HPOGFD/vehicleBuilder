@@ -31,7 +31,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/HPOGFD/vehicleBuilder.git ]
+git clone https://github.com/HPOGFD/vehicleBuilder.git 
 
 cd vehiclebuilder  
 # Install dependencies:
@@ -45,6 +45,9 @@ Copy code
 npm run start  
 
 ## 🚀 Usage
+
+Video link https://drive.google.com/file/d/12v_mbryndye4xVKNNU-rY_A2jOY_Ys7u/view?usp=sharing 
+
 Start the application:
 
 bash
